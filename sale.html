@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Report</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+body { display:flex; min-height:100vh; background:#e6f0ff; color:#333; }
+.sidebar { width:250px; background:#1e4d9a; display:flex; flex-direction:column; padding:20px; color:#fff; }
+.sidebar h2 { font-size:22px; margin-bottom:30px; }
+.menu a { display:block; text-decoration:none; color:#fff; padding:10px 0; transition:0.3s; }
+.menu a:hover { color:#ffd700; font-weight:bold; transform: translateX(5px); }
+.main { flex:1; padding:20px; }
+h1 { margin-bottom:20px; color:#1e4d9a; }
+.cards { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:20px; }
+.card { flex:1; min-width:180px; background:#fff; padding:20px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.15); text-align:center; transition:0.3s; }
+.card:hover { transform:translateY(-5px); }
+.card h3 { margin-bottom:10px; color:#1e4d9a; }
+.card p { font-size:22px; font-weight:bold; margin-bottom:5px; }
+.card small { color:#555; font-size:14px; }
+canvas { background:#fff; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.15); margin-bottom:20px; }
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h2>Dashboard</h2>
+<div class="menu">
+<a href="index.html">Dashboard</a>
+<a href="leader.html">Leaderboard</a>
+<a href="order.html">Orders</a>
+<a href="product.html">Products</a>
+<a href="sale.html">Sales Report</a>
+<a href="message.html">Messages</a>
+<a href="setting.html">Settings</a>
+<a href="#">Sign Out</a>
+</div>
+</div>
+
+<div class="main">
+<h1>Sales Report</h1>
+
+<div class="cards">
+  <div class="card">
+    <h3>Total Sales</h3>
+    <p>$32,400</p>
+    <small>Last 30 days</small>
+  </div>
+  <div class="card">
+    <h3>Top Month</h3>
+    <p>July</p>
+    <small>Highest revenue</small>
+  </div>
+  <div class="card">
+    <h3>Low Month</h3>
+    <p>February</p>
+    <small>Lowest revenue</small>
+  </div>
+</div>
+
+<h2>Monthly Sales Chart</h2>
+<canvas id="salesChart" width="600" height="300"></canvas>
+
+<script>
+let ctx = document.getElementById('salesChart').getContext('2d');
+let data = [1200, 1500, 800, 1700, 2000, 1400, 2500, 1800, 2300, 3000, 2800, 3500];
+let labels = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ctx.fillStyle = "#1e4d9a";
+data.forEach((val,i)=>{
+  let barHeight = val/40;
+  ctx.fillRect(i*50+20,300-barHeight,30,barHeight);
+});
+</script>
+
+</div>
+</body>
+</html>

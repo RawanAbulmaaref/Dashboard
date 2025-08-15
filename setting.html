@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
+body{display:flex;min-height:100vh;background:#e6f0ff;color:#333;}
+.sidebar{width:250px;background:#1e4d9a;display:flex;flex-direction:column;padding:20px;color:#fff;}
+.sidebar h2{font-size:22px;margin-bottom:30px;}
+.menu a{display:block;text-decoration:none;color:#fff;padding:10px 0;transition:0.3s;}
+.menu a:hover{color:#ffd700;font-weight:bold;transform: translateX(5px);}
+.main{flex:1;padding:20px;}
+h1{margin-bottom:20px;color:#1e4d9a;}
+form{background:#fff;padding:20px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.15);max-width:500px;}
+form label{display:block;margin-bottom:5px;color:#1e4d9a;font-weight:bold;}
+form input{width:100%;padding:10px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;}
+form button{padding:10px 20px;background:#1e4d9a;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:0.3s;}
+form button:hover{background:#154080;}
+</style>
+</head>
+<body>
+<div class="sidebar">
+<h2>Dashboard</h2>
+<div class="menu">
+<a href="index.html">Dashboard</a>
+<a href="leader.html">Leaderboard</a>
+<a href="order.html">Orders</a>
+<a href="product.html">Products</a>
+<a href="sale.html">Sales Report</a>
+<a href="message.html">Messages</a>
+<a href="setting.html">Settings</a>
+<a href="signout.html">Sign Out</a>
+</div>
+</div>
+
+<div class="main">
+<h1>Settings</h1>
+
+<form>
+<label for="username">Username</label>
+<input type="text" id="username" value="AhmedAli123">
+
+<label for="email">Email</label>
+<input type="email" id="email" value="ahmed@example.com">
+
+<label for="password">Password</label>
+<input type="password" id="password" value="password123">
+
+<label for="notifications">Notifications</label>
+<select id="notifications">
+<option>Enabled</option>
+<option>Disabled</option>
+</select>
+
+<button type="submit">Save Changes</button>
+</form>
+
+</div>
+</body>
+</html>

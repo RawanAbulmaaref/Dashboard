@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Examples</title>
+<style>
+/* ================= 1 & 2 - CSS Variables (Global & Local) ================= */
+:root {
+  --global-color: #3498db;
+  --global-padding: 10px;
+}
+.variables-example {
+  background: var(--global-color);
+  padding: var(--global-padding);
+  color: white;
+}
+.local-example {
+  --local-color: orange;
+  background: var(--local-color);
+  padding: var(--global-padding);
+}
+
+/* ================= 3 - Text Styling ================= */
+.text-example {
+  color: purple;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ================= 4 - Centering Methods ================= */
+.center-parent {
+  height: 150px;
+  border: 2px dashed #ccc;
+  margin-bottom: 20px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+.absolute-center {
+  position: relative;
+}
+.absolute-center div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.auto-margin {
+  position: relative;
+}
+.auto-margin div {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  height: 50px;
+  width: 100px;
+  background: lightblue;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* ================= 5 - Inheritance ================= */
+.inherit-example {
+  color: green;
+}
+.inherit-example span {
+  color: inherit;
+}
+
+/* ================= 6 - CSS Units ================= */
+.units-example {
+  font-size: 2rem; /* relative to root font size */
+  width: 50%; /* relative to parent */
+  background: lightyellow;
+}
+
+/* ================= 7 - Vendor Prefix ================= */
+.prefix-example {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* ================= 8 - Margin Collapse ================= */
+.margin1 {
+  margin-bottom: 30px;
+  background: lightcoral;
+}
+.margin2 {
+  margin-top: 20px;
+  background: lightgreen;
+}
+
+/* ================= 9 - Min/Max Width/Height ================= */
+.size-example {
+  width: 50%;
+  min-width: 200px;
+  max-width: 500px;
+  height: 100px;
+  min-height: 50px;
+  max-height: 150px;
+  background: lightgray;
+}
+
+/* ================= 10 - Filters ================= */
+.filter-example {
+  filter: grayscale(100%) blur(1px) brightness(1.2);
+}
+
+/* ================= 11 - Pointer Events & Caret Color ================= */
+.pointer-example {
+  pointer-events: none;
+  background: pink;
+}
+.caret-example {
+  caret-color: red;
+}
+
+/* ================= 12 - Grid ================= */
+.grid-example {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+.grid-example div {
+  background: lightblue;
+  text-align: center;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>1 & 2 - CSS Variables</h2>
+<div class="variables-example">Global Variable Example</div>
+<div class="local-example">Local Variable Example</div>
+
+<h2>3 - Text Styling</h2>
+<p class="text-example">hello world</p>
+
+<h2>4 - Center a Div</h2>
+<div class="center-parent flex-center"><div>Flexbox</div></div>
+<div class="center-parent grid-center"><div>Grid</div></div>
+<div class="center-parent absolute-center"><div>Absolute + Transform</div></div>
+<div class="center-parent auto-margin"><div>Absolute + Auto Margins</div></div>
+
+<h2>5 - Inheritance</h2>
+<div class="inherit-example">
+  Parent Text <span>Child Text (Inherited)</span>
+</div>
+
+<h2>6 - CSS Units</h2>
+<div class="units-example">Relative Units Example</div>
+
+<h2>7 - Vendor Prefix</h2>
+<div class="prefix-example">Can't Select This Text</div>
+
+<h2>8 - Margin Collapse</h2>
+<div class="margin1">Margin Bottom 30px</div>
+<div class="margin2">Margin Top 20px (Collapsed)</div>
+
+<h2>9 - Min/Max Width/Height</h2>
+<div class="size-example">Resize window to test</div>
+
+<h2>10 - Filters</h2>
+<img src="v1.jpg" alt="Filtered" class="filter-example">
+
+<h2>11 - Pointer Events & Caret Color</h2>
+<button class="pointer-example">Can't Click Me</button>
+<input type="text" class="caret-example" placeholder="Red Caret">
+
+<h2>12 - Grid Example</h2>
+<div class="grid-example">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+</div>
+
+</body>
+</html>
